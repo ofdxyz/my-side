@@ -1,0 +1,61 @@
+/* Our Nebula – fonts + small layout fixes (loaded after each page's own <style>) */
+@font-face{font-family:'Golden Fat';src:url('GoldenFat.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Auromiya';src:url('Auromiya.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Megazine Poster';src:url('MegazinePoster.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Kineks Compact';src:url('KineksCompact-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Kineks Compact';src:url('KineksCompact-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Kineks Compact';src:url('KineksCompact-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+:root{
+    --f-display:'Golden Fat','Segoe UI',system-ui,sans-serif;   /* logo, big titles, numbers */
+    --f-script:'Auromiya','Segoe UI',system-ui,sans-serif;      /* subtitles, card titles, captions */
+    --f-accent:'Megazine Poster','Segoe UI',system-ui,sans-serif; /* nav, buttons, tags */
+    --f-body:'Kineks Compact','Segoe UI',system-ui,Arial,sans-serif; /* paragraphs */
+}
+body{font-family:var(--f-body);font-synthesis:none;letter-spacing:.2px}
+
+/* display */
+.nav-left,.preloader-logo,.hero-text,.section-title,.about-title,.contact-info h2,.stat-number,.success h3{font-family:var(--f-display);font-weight:400;font-style:normal}
+.nav-left{font-size:26px;letter-spacing:1.5px}
+.navbar.shrunk .nav-left{font-size:21px}
+.preloader-logo{font-size:clamp(30px,9vw,54px);letter-spacing:3px;text-align:center}
+.hero-text{text-transform:none;letter-spacing:2px;font-size:clamp(40px,8vw,84px)}
+.section-title{letter-spacing:1px;line-height:1.2}
+.about-title,.contact-info h2{letter-spacing:1px}
+.stat-number{letter-spacing:1px}
+
+/* script */
+.hero-sub,.feature-title,.media-caption,.lightbox-caption{font-family:var(--f-script);font-weight:400}
+.hero-sub{letter-spacing:2px}
+.feature-title{letter-spacing:.5px}
+
+/* accent */
+.nav-links a,.mobile-menu a,.btn,.chip,.dl-btn,.tag,.badge,.stat-label,.marquee span,.lb-btn,.foot-links a{font-family:var(--f-accent);font-weight:400}
+.btn{letter-spacing:1.5px}
+.stat-label{letter-spacing:2px}
+
+/* "Our Nebula" highlight */
+.hl{color:var(--accent-light);font-weight:700;text-shadow:0 0 22px rgba(var(--accent-rgb),.75)}
+.section-title.title-mixed{color:#fff;text-shadow:none}
+.section-title.title-mixed .hl{color:var(--accent);text-shadow:0 0 28px rgba(var(--accent-rgb),.65);font-weight:400}
+footer .hl{font-family:var(--f-display);font-weight:400;letter-spacing:.5px}
+
+/* alignment */
+.intro-box{text-wrap:balance}
+.intro-box p{margin:0 auto 22px;max-width:820px}
+.intro-box p:last-child{margin-bottom:0}
+.stats{max-width:760px;margin-inline:auto}
+.contact-wrap{align-items:start}
+.contact-info{text-align:left}
+.contact-info p{max-width:520px}
+.contact-points li{display:flex;align-items:baseline}
+.contact-card{align-self:start}
+.field label{font-family:var(--f-body)}
+@media(max-width:992px){
+    .contact-info{text-align:center}
+    .contact-info p{margin-inline:auto}
+    .contact-points{justify-items:center}
+}
+.hl{white-space:nowrap}
+.section-title{text-wrap:balance}
+.media-card,.media-card:hover{text-decoration:none}
