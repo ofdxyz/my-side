@@ -7,5 +7,13 @@
     "category": "moon",
     "image": "/assets/astro/48913.png",
     "image_4k": "/assets/astro/48913.png"
+  },
+  {
+    "title": "Milky Way Core",
+    "target": "Milky Way Core",
+    "gear": "Phone and Tripod",
+    "date": "2026-09-03",
+    "category": "milkyway",
+    "image": "/assets/astro/50556.jpg"
   }
 ]
