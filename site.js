@@ -319,7 +319,36 @@ const contactTarget = () => CONFIG.formAlias || atob(CONFIG.contactEmailB64);
         return a;
     }
 
+    // ---------- Gears (reads data/gears.json – edited from the Pages CMS admin) ----------
+    let gearsPromise = null;
+    function loadGears() {
+        if (!gearsPromise) gearsPromise = fetch('data/gears.json', { cache: 'no-cache' })
+            .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+            .then(data => (Array.isArray(data) ? data : (data && data.gears) || []).filter(g => g && (g.name || g.image)));
+        return gearsPromise;
+    }
+    function gearCard(g) {
+        const name = g.name || 'Gear', src = safePath(g.image);
+        const card = make('div', 'card media-card tilt reveal');
+        if (src) {
+            const wrap = make('div', 'img-wrap'), img = make('img'); img.src = src; img.alt = name; img.dataset.fallback = '🔭';
+            wrap.append(img); card.append(wrap);
+        } else card.append(make('div', 'img-fallback', '🔭'));
+        card.append(make('div', 'media-caption', name));
+        if (g.description) card.append(make('div', 'media-desc', g.description));
+        const tags = (Array.isArray(g.tags) ? g.tags : []).map(t => String(t || '').trim()).filter(Boolean);
+        if (tags.length) { const row = make('div', 'badges'); tags.forEach(t => row.append(make('span', 'badge', t))); card.append(row); }
+        return card;
+    }
+
     async function initGallery() {
+        const gearsGrid = $('#gearsGrid');
+        if (gearsGrid) {
+            try {
+                const list = await loadGears();
+                gearsGrid.replaceChildren(...(list.length ? list.map(gearCard) : [make('p', 'note', 'No gear listed yet.')]));
+            } catch (e) { gearsGrid.replaceChildren(make('p', 'note', 'The gear list could not be loaded right now. (Opened the file directly? Use a local web server – see README.)')); }
+        }
         const grid = $('#galleryGrid'), preview = $('[data-gallery-preview]');
         if (!grid && !preview) return;
         let list;

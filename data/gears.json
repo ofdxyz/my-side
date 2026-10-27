@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Telescope Tube",
+    "description": "110mm optical tube system.",
+    "tags": ["110 mm", "Optical Tube"],
+    "image": "assets/gears/gear1.jpg"
+  },
+  {
+    "name": "Objective Lens",
+    "description": "83mm / 900mm focal length.",
+    "tags": ["83 mm", "900 mm FL"],
+    "image": "assets/gears/gear2.jpg"
+  },
+  {
+    "name": "3D Printed Parts",
+    "description": "Custom mount system.",
+    "tags": ["Custom", "3D Printed"],
+    "image": "assets/gears/gear3.jpg"
+  }
+]

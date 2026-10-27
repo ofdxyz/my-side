@@ -11,6 +11,9 @@ Plain HTML/CSS/JS site (no build step). Works on GitHub Pages.
 Tips: keep the photo itself around 1600px / under ~500 KB. The optional "4K version" field adds a second download button.
 If the repo grows too big later, store the 4K files on Cloudinary and paste their https links into the `image_4k` field.
 
+## Gears page
+Same idea: **Gears → Add an entry** in Pages CMS (name, short description, small tags, photo). Data lives in `data/gears.json`, photos in `assets/gears`.
+
 ## Contact form (messages go to ournebulaa@gmail.com)
 - Uses FormSubmit. After you publish the site, send **one test message**. FormSubmit emails an activation link to ournebulaa@gmail.com – click it once.
 - Safer: that mail also contains a random form ID. Paste it in `site.js` → `CONFIG.formAlias`. Then your email is not used in the page at all.
@@ -24,7 +27,7 @@ Opening `gallery.html` by double‑click can't load `data/gallery.json`. Run a t
 ## Files
 - `site.js` – all behaviour (gallery, lightbox, form, animations)
 - `assets/style.css` + `assets/fonts/fonts.css` – styles and fonts
-- `data/gallery.json` – the gallery list (edited by Pages CMS)
+- `data/gallery.json` – the gallery list, `data/gears.json` – the gear list (both edited by Pages CMS)
 - `.pages.yml` – Pages CMS admin setup
 - Fonts (Golden Fat, Auromiya, Megazine Poster demo, Kineks Compact trial) are personal‑use licences – buy commercial licences if the site ever earns money.
 - Social preview image: `assets/og-image.jpg`. For link previews to show it, change `og:image` in each page to the full URL (https://your-site/assets/og-image.jpg).
