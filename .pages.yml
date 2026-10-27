@@ -1,0 +1,71 @@
+media:
+  - name: photos
+    label: Gallery photos
+    input: assets/astro
+    output: /assets/astro
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: gallery
+    label: Gallery
+    type: file
+    path: data/gallery.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+        options:
+          maxlength: 80
+      - name: target
+        label: Target
+        type: string
+        options:
+          maxlength: 80
+      - name: gear
+        label: Gear
+        type: string
+        options:
+          maxlength: 120
+      - name: date
+        label: Date
+        type: date
+        default: ""
+        options:
+          format: yyyy-MM-dd
+      - name: category
+        label: Category (for the filter buttons)
+        type: select
+        required: true
+        options:
+          values:
+            - name: nebula
+              label: Nebula
+            - name: galaxy
+              label: Galaxy
+            - name: moon
+              label: Moon
+            - name: planet
+              label: Planet
+            - name: milkyway
+              label: Milky Way
+            - name: sky
+              label: Night Sky
+            - name: other
+              label: Other
+      - name: image
+        label: Photo (shown on the site)
+        type: image
+        required: true
+        options:
+          media: photos
+          extensions: [jpg, jpeg, png, webp]
+      - name: image_4k
+        label: 4K / full-size version (optional)
+        type: image
+        options:
+          media: photos
+          extensions: [jpg, jpeg, png, webp]
