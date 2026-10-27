@@ -5,6 +5,12 @@ media:
     output: /assets/astro
     rename: safe
     extensions: [jpg, jpeg, png, webp]
+  - name: gears
+    label: Gear photos
+    input: assets/gears
+    output: /assets/gears
+    rename: safe
+    extensions: [jpg, jpeg, png, webp]
 
 content:
   - name: gallery
@@ -68,4 +74,33 @@ content:
         type: image
         options:
           media: photos
+          extensions: [jpg, jpeg, png, webp]
+
+  - name: gears
+    label: Gears
+    type: file
+    path: data/gears.json
+    format: json
+    list: true
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+        options:
+          maxlength: 60
+      - name: description
+        label: Short description
+        type: string
+        options:
+          maxlength: 120
+      - name: tags
+        label: Tags (small labels, e.g. 110 mm)
+        type: string
+        list: true
+      - name: image
+        label: Photo
+        type: image
+        options:
+          media: gears
           extensions: [jpg, jpeg, png, webp]
