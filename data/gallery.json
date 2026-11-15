@@ -15,5 +15,14 @@
     "date": "2026-09-03",
     "category": "milkyway",
     "image": "/assets/astro/50556.jpg"
+  },
+  {
+    "title": "Golden crescent moon with soft earthshine glowing in the deep night sky.",
+    "target": "Moon",
+    "gear": "F/6",
+    "date": "2026-11-13",
+    "category": "moon",
+    "image": "/assets/astro/53745.png",
+    "image_4k": "/assets/astro/53745-1.png"
   }
 ]
