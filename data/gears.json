@@ -5,6 +5,8 @@
     "image": "/assets/gears/50555.jpg"
   },
   {
-    "name": "Trex"
+    "name": "Trex",
+    "description": "A 500 mm, f/8 handcrafted telescope: big light, sharp views, built by hand.",
+    "image": "/assets/gears/54507.png"
   }
 ]
